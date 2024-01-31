@@ -17,8 +17,19 @@ namespace cerchio
             this.Raggio = raggio;
         }
 
-        public double Raggio { get; set; } 
-        public double CalcoloArea()
+        public double Raggio { get; set; }
+        public static Cerchio Parse(string s)
+        {
+            Cerchio c=new Cerchio();
+            c.Raggio = double.Parse(s.Substring(0));
+            return c;
+
+        }
+        public override string ToString()
+        {
+            return string.Format("{0}", Raggio);
+        }
+        /*public double CalcoloArea()
         {
             return ((Raggio * Raggio * Math.PI));
         }
@@ -26,5 +37,6 @@ namespace cerchio
         {
             return (Raggio * Math.PI * 2);
         }
+        */
     }
 }
